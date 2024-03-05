@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <main className=' text-center'>
       <Drawer>
-        <DrawerTrigger>Open</DrawerTrigger>
-        <DrawerContent>
+        <DrawerTrigger className='text-white'>Open</DrawerTrigger>
+        <DrawerContent className='bg-new_black text-white'>
           <DrawerHeader>
             <DrawerTitle>Are you absolutely sure?</DrawerTitle>
             <DrawerDescription>This action cannot be undone.</DrawerDescription>
