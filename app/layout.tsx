@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from './components/Navbar';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Ahmad Abo Elzahab",
+  title: 'Ahmad Abo Elzahab',
   description: "This ahmad's portfolio",
 };
 
@@ -15,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="text-white bg-black">{children}</body>
+    <html lang='en'>
+      <body className='text-white bg-black'>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
