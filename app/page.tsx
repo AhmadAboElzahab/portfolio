@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import BigText from './components/BigText';
 
 export default function Home() {
