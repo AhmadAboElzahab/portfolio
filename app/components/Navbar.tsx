@@ -15,9 +15,9 @@ export default function Navbar() {
   const isActive = (path: string) => path === pathname;
 
   return (
-    <nav className='  sticky drop-shadow-xl z-10'>
+    <nav className=''>
       <div className='mx-auto flex justify-between flex-col sm:flex-row'>
-        <div className='mx-auto fon text-[#727279]  font-medium	w-[55%] flex felx-row justify-between p-3'>
+        <div className='mx-auto fon text-[#727279]  w-full md:w-[70%]	lg:w-[58%] flex felx-row justify-between pt-4'>
           <div>
             <h1 className=' no-underline pt-3'>
               <Link href='/'>
@@ -25,8 +25,8 @@ export default function Navbar() {
               </Link>
             </h1>
           </div>
-          <div className='flex gap-x-2 '>
-            <div className='pt-1 flex gap-x-2 '>
+          <div className='flex gap-x-5 '>
+            <div className='pt-1 flex gap-x-5 '>
               {NavLinks.map((link) => {
                 return (
                   <>
