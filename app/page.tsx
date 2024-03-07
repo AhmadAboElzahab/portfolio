@@ -75,8 +75,8 @@ const dummyContent = [
 ];
 export default function Home() {
   return (
-    <main className=' w-[90%] md:w-[80%]	lg:w-[58%] mx-auto'>
-      <TracingBeam className='px-6'>
+    <main className=' w-[90%] md:w-[80%]	lg:w-[58%] mx-auto '>
+      <TracingBeam className='px-10 lg:px-6 '>
         <div className='max-w-2xl mx-auto antialiased pt-4 relative'></div>
         <BigText />
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo
