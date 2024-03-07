@@ -35,7 +35,7 @@ export const TracingBeam = ({
   });
 
   return (
-    <motion.div ref={ref} className={cn('relative w-full max-w-4xl mx-auto h-full', className)}>
+    <motion.div ref={ref} className={cn('relative w-full max-w-4xl mx-auto h-', className)}>
       <div className='absolute -left-4 md:-left-20 top-3'>
         <motion.div
           transition={{
@@ -53,8 +53,8 @@ export const TracingBeam = ({
               delay: 0.5,
             }}
             animate={{
-              backgroundColor: scrollYProgress.get() > 0 ? 'white' : 'white',
-              borderColor: scrollYProgress.get() > 0 ? 'white' : 'white',
+              backgroundColor: scrollYProgress.get() > 0 ? 'white' : '#742EFF',
+              borderColor: scrollYProgress.get() > 0 ? 'white' : '#742EFF',
             }}
             className='h-2 w-2  rounded-full border border-neutral-300 bg-white'
           />
@@ -91,8 +91,8 @@ export const TracingBeam = ({
               gradientUnits='userSpaceOnUse'
               x1='0'
               x2='0'
-              y1={y1} // set y1 for gradient
-              y2={y2} // set y2 for gradient
+              y1={y1}
+              y2={y2}
             >
               <stop stopColor='#18CCFC' stopOpacity='0'></stop>
               <stop stopColor='#18CCFC'></stop>

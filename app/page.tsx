@@ -1,5 +1,4 @@
 import BigText from './components/Home/BigText';
-import { TracingBeam } from './components/ui/tracing-beam';
 import Image from 'next/image';
 
 const dummyContent = [
@@ -75,39 +74,75 @@ const dummyContent = [
 ];
 export default function Home() {
   return (
-    <main className=' w-[90%] md:w-[80%]	lg:w-[58%] mx-auto '>
-      <TracingBeam className='px-10 lg:px-6 '>
-        <div className='max-w-2xl mx-auto antialiased pt-4 relative'></div>
-        <BigText />
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo
-        provident perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat,
-        quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis
-        possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis
-        voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Nulla praesentium recusandae illo provident perspiciatis possimus voluptatibus
-        cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa
-        qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium
-        recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur at neque,
-        fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-        perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-        debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-        voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-        amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-        praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate
-        aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo
-        provident perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat,
-        quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis
-        possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis
-        voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Nulla praesentium recusandae illo provident perspiciatis possimus voluptatibus
-        cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa
-        qui deleniti?
-      </TracingBeam>
+    <main className=' w-[90%] md:w-[80%]	lg:w-[90%]  mx-auto '>
+      <div className='max-w-2xl mx-auto antialiased pt-4 relative'></div>
+      <BigText />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo
+      provident perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam
+      illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
+      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
+      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
+      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
+      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
+      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
+      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti?
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
+      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
+      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti?
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
+      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
+      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti?
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
+      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
+      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
+      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
+      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
+      debitis voluptas quos amet culpa qui deleniti?
     </main>
   );
 }
