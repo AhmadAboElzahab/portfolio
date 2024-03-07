@@ -1,148 +1,40 @@
+'use client';
 import BigText from './components/Home/BigText';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-const dummyContent = [
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse adipisicing laboris
-          consectetur enim ipsum reprehenderit eu deserunt Lorem ut aliqua anim do. Duis cupidatat
-          qui irure cupidatat incididunt incididunt enim magna id est qui sunt fugiat. Laboris do
-          duis pariatur fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore nisi
-          velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in occaecat reprehenderit
-          laborum nostrud fugiat voluptate do Lorem culpa officia sint labore. Tempor consectetur
-          excepteur ut fugiat veniam commodo et labore dolore commodo pariatur.
-        </p>
-        <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad veniam in commodo id
-          reprehenderit adipisicing. Proident duis exercitation ad quis ex cupidatat cupidatat
-          occaecat adipisicing.
-        </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod reprehenderit deserunt amet
-          laborum consequat adipisicing officia qui irure id sint adipisicing. Adipisicing fugiat
-          aliqua nulla nostrud. Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
-        </p>
-      </>
-    ),
-    badge: 'React',
-    image:
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat
-          aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor.
-          Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna
-          reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-        <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse veniam fugiat esse qui
-          sint ad sunt reprehenderit do qui proident reprehenderit. Laborum exercitation aliqua
-          reprehenderit ea sint cillum ut mollit.
-        </p>
-      </>
-    ),
-    badge: 'Changelog',
-    image:
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-  {
-    title: 'Lorem Ipsum Dolor Sit Amet',
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat
-          aute. Enim cillum dolor et nulla sunt exercitation non voluptate qui aliquip esse tempor.
-          Ullamco ut sunt consectetur sint qui qui do do qui do. Labore laborum culpa magna
-          reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: 'Launch Week',
-    image:
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
-];
+import { TextGenerateEffect } from './components/ui/text-generate-effect';
+
 export default function Home() {
   return (
     <main className=' w-[90%] md:w-[80%]	lg:w-[90%]  mx-auto '>
-      <div className='max-w-2xl mx-auto antialiased pt-4 relative'></div>
       <BigText />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo
-      provident perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam
-      illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti?
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti?
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti?
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla praesentium recusandae illo provident perspiciatis possimus
-      voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum, debitis voluptas quos
-      amet culpa qui deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-      praesentium recusandae illo provident perspiciatis possimus voluptatibus cupiditate aspernatur
-      at neque, fugiat, quibusdam illum, debitis voluptas quos amet culpa qui deleniti? Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Nulla praesentium recusandae illo provident
-      perspiciatis possimus voluptatibus cupiditate aspernatur at neque, fugiat, quibusdam illum,
-      debitis voluptas quos amet culpa qui deleniti?
+
+      <div className='h-[50rem] w-full bg-black bg-dot-white/[0.2] relative flex items-center justify-center'>
+        <div className='absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
+        <div className='flex flex-col'>
+          <motion.div
+            initial={{ opacity: 0, x: -300 }}
+            viewport={{ once: true }}
+            whileInView={{ opacity: 1, x: 300, transition: { duration: 1.0 } }}
+          >
+            <div className='text-5xl'>Who am I</div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -300 }}
+            viewport={{ once: true }}
+            whileInView={{ opacity: 1, x: 0, transition: { duration: 1.0 } }}
+          >
+            <TextGenerateEffect
+              words='    Passionate software engineer with 3+ years of expertise in crafting immersive and
+            responsive websites. Proficient in JavaScript Frameworks, and a suite of tools. I blend
+            innovation with functionality to deliver seamless user experiences. A collaborative
+            spirit fuels my agile approach, partnering with diverse teams to create digital
+            landscapes that resonate with both clients and end-users.'
+            />
+          </motion.div>
+        </div>
+      </div>
     </main>
   );
 }
