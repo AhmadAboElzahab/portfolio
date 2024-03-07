@@ -3,7 +3,11 @@
 import Link from 'next/link';
 import Logo from './Logo';
 import { usePathname } from 'next/navigation';
-
+interface link {
+  id: number;
+  name: string;
+  path: string;
+}
 export default function Navbar() {
   const NavLinks = [
     { id: 1, name: 'Home', path: '/' },
@@ -17,28 +21,23 @@ export default function Navbar() {
   return (
     <nav className=''>
       <div className='mx-auto flex justify-between flex-col sm:flex-row'>
-        <div className='mx-auto fon text-[#727279]  w-full md:w-[70%]	lg:w-[58%] flex felx-row justify-between pt-4'>
+        <div className='mx-auto fon text-[#727279]  w-[90%] md:w-[80%]	lg:w-[58%] flex felx-row justify-between pt-4'>
           <div>
-            <h1 className=' no-underline pt-3'>
-              <Link href='/'>
-                <Logo />
-              </Link>
-            </h1>
+            <Logo />
           </div>
-          <div className='flex gap-x-5 '>
-            <div className='pt-1 flex gap-x-5 '>
-              {NavLinks.map((link) => {
+          <div className='flex gap-x-2 md:gap-x-3 lg:gap-x-5  '>
+            <div className='pt-1 flex gap-x-2 md:gap-x-3 lg:gap-x-5 '>
+              {NavLinks.map((link: link, index: number) => {
                 return (
-                  <>
-                    <Link
-                      className={` ${
-                        isActive(link.path) ? 'text-white ' : ''
-                      }hover:text-white hover:transition duration-300`}
-                      href={link.path}
-                    >
-                      {link.name}
-                    </Link>
-                  </>
+                  <Link
+                    key={index}
+                    className={` ${
+                      isActive(link.path) ? 'text-white ' : ''
+                    }hover:text-white hover:transition duration-300`}
+                    href={link.path}
+                  >
+                    {link.name}
+                  </Link>
                 );
               })}
             </div>

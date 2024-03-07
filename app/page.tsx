@@ -1,35 +1,10 @@
-import Image from 'next/image';
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from '@/components/ui/drawer';
-
 import { Button } from '@/components/ui/button';
+import BigText from './components/BigText';
 
 export default function Home() {
   return (
-    <main className=' text-center'>
-      <Drawer>
-        <DrawerTrigger className='text-white'>Open</DrawerTrigger>
-        <DrawerContent className='bg-new_black text-white'>
-          <DrawerHeader>
-            <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-            <DrawerDescription>This action cannot be undone.</DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter>
-            <Button>Submit</Button>
-            <DrawerClose>
-              <Button variant='outline'>Cancel</Button>
-            </DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+    <main className=' w-[90%] md:w-[80%]	lg:w-[58%] mx-auto'>
+      <BigText />
     </main>
   );
 }

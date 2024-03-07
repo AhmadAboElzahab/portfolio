@@ -18,7 +18,7 @@ export default function Logo() {
             data-v-b445a402=''
             className=''
           >
-            <g transform='translate(0 .5)' fill-rule='nonzero' fill='none' data-v-b445a402=''>
+            <g transform='translate(0 .5)' fillRule='nonzero' fill='none' data-v-b445a402=''>
               <path
                 d='M10.058.319c.361.208.661.508.87.87l6.493 11.246A2.377 2.377 0 0 1 15.363 16H2.377a2.377 2.377 0 0 1-2.059-3.565L6.811 1.189a2.377 2.377 0 0 1 3.247-.87z'
                 fill='#742eff'
