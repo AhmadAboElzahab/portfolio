@@ -5,7 +5,7 @@ export default function BigText() {
   return (
     <div className=''>
       <h1 className='text-6xl lg:text-8xl  font-extrabold text-white'>
-        <div className='h-[20rem] md:h-[40rem] lg:h-[50rem] text-center w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md'>
+        <div className='h-screen text-center w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md'>
           Ahmaad Abo Elzahab
           <div className='w-[60rem] h-40 relative'>
             <div className='absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm' />
