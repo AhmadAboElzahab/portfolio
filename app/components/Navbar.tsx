@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Logo from './Logo';
+import Logo from './Home/Logo';
 import { usePathname } from 'next/navigation';
 interface link {
   id: number;
@@ -42,7 +42,7 @@ export default function Navbar() {
               })}
             </div>
             <Link
-              className='bg-[#8E8E98] hover:bg-[#aaaab1] py-1 px-2 hover:transition duration-300	text-black  rounded-sm '
+              className='bg-[#8E8E98] hover:bg-[#aaaab1] py-1 px-2 hover:transition duration-300	text-black  rounded'
               href='/contact'
             >
               Resume
