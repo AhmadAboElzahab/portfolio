@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Logo() {
   return (
-    <div className='pt-3' data-v-b445a402=''>
+    <div className='pt-2' data-v-b445a402=''>
       <a
         href='/'
         aria-current='page'
