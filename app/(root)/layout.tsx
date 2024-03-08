@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import Navbar from '../components/Navbar';
 import { TracingBeam } from '../components/ui/tracing-beam';
-import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +21,6 @@ export default function RootLayout({
       <body className=' bg-black'>
         <Navbar />
         <TracingBeam className='px-10 lg:px-6 '>{children}</TracingBeam>
-        <Analytics />
       </body>
     </html>
   );
