@@ -1,20 +1,19 @@
-import { MdOutlineDashboard } from 'react-icons/md';
 import { RiSettings4Line } from 'react-icons/ri';
-import { MdOutlineAddPhotoAlternate } from 'react-icons/md';
 import { AiOutlineUser } from 'react-icons/ai';
+import { RxDashboard } from 'react-icons/rx';
+import { GoProjectRoadmap, GoProjectTemplate } from 'react-icons/go';
 
-import { IoVideocamOutline } from 'react-icons/io5';
 import React from 'react';
 import Link from 'next/link';
 import VerticalLogo from '@/app/dashboard/Logo';
 
 const Navbar = () => {
   const menus = [
-    { name: 'Dashboard', link: '', icon: MdOutlineDashboard },
-    { name: 'Accounts', link: 'socialmedia', icon: AiOutlineUser },
-    { name: 'Graphic', link: 'graphic', icon: MdOutlineAddPhotoAlternate, margin: true },
-    { name: 'Video', link: 'video', icon: IoVideocamOutline },
-    { name: 'Setting', link: 'settings', icon: RiSettings4Line, margin: true },
+    { name: 'Dashboard', link: '', icon: RxDashboard },
+    { name: 'Info', link: '/dashboard/info', icon: AiOutlineUser },
+    { name: 'Blog', link: '/dashboard/blog', icon: GoProjectRoadmap, margin: true },
+    { name: 'Project', link: '/dashboard/projects', icon: GoProjectTemplate },
+    { name: 'Setting', link: '/dashboard/settings', icon: RiSettings4Line, margin: true },
   ];
 
   return (
