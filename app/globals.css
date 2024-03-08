@@ -18,11 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
 }
 
@@ -30,4 +26,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.cn {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.sec {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
