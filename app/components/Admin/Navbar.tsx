@@ -9,7 +9,7 @@ import VerticalLogo from '@/app/dashboard/Logo';
 
 const Navbar = () => {
   const menus = [
-    { name: 'Dashboard', link: '', icon: RxDashboard },
+    { name: 'Dashboard', link: '/dashboard', icon: RxDashboard },
     { name: 'Info', link: '/dashboard/info', icon: AiOutlineUser },
     { name: 'Blog', link: '/dashboard/blog', icon: GoProjectRoadmap, margin: true },
     { name: 'Project', link: '/dashboard/projects', icon: GoProjectTemplate },
