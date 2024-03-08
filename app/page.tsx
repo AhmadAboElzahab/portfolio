@@ -1,6 +1,5 @@
 'use client';
 import BigText from './components/Home/BigText';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { TextGenerateEffect } from './components/ui/text-generate-effect';

@@ -42,7 +42,7 @@ export default function Navbar() {
               })}
             </div>
             <Link
-              className='bg-[#8E8E98] hover:bg-[#aaaab1] py-1 px-2 hover:transition duration-300	text-black  rounded'
+              className='bg-[#8E8E98] hover:bg-[#aaaab1] py-1 px-2 hover:transition duration-300	text-black  rounded-lg'
               href='/contact'
             >
               Resume

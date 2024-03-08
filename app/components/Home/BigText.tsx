@@ -1,9 +1,11 @@
 import React from 'react';
 import { SparklesCore } from '../ui/sparkles';
+import { Spotlight } from '../ui/Spotlight';
 
 export default function BigText() {
   return (
     <div className=''>
+      <Spotlight className='-top-40 left-0 md:left-60 md:-top-20' fill='white' />
       <h1 className='text-6xl lg:text-8xl  font-extrabold text-white'>
         <div className='h-screen text-center w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md'>
           Ahmaad Abo Elzahab
