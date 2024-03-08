@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <nav className=''>
       <div className='mx-auto flex justify-between flex-col sm:flex-row'>
-        <div className='mx-auto fon text-[#727279]  w-[90%] md:w-[80%]	lg:w-[58%] flex felx-row justify-between pt-4'>
+        <div className='mx-auto  text-[#727279]  w-[90%] md:w-[80%]	lg:w-[58%] flex felx-row justify-between pt-4'>
           <div>
             <Logo />
           </div>
