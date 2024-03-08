@@ -1,8 +1,9 @@
 'use client';
-import BigText from './components/Home/BigText';
+import React from 'react';
+import BigText from '../components/Home/BigText';
 import { motion } from 'framer-motion';
 
-import { TextGenerateEffect } from './components/ui/text-generate-effect';
+import { TextGenerateEffect } from '../components/ui/text-generate-effect';
 
 export default function Home() {
   return (

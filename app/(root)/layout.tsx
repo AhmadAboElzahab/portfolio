@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
-import Navbar from './components/Navbar';
-import { TracingBeam } from './components/ui/tracing-beam';
+import '../globals.css';
+import Navbar from '../components/Navbar';
+import { TracingBeam } from '../components/ui/tracing-beam';
 
 const inter = Inter({ subsets: ['latin'] });
 
