@@ -37,3 +37,18 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
+.bounce {
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.vertical-svg {
+  transform: rotate(90deg);
+}

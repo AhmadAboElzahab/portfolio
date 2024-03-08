@@ -11,8 +11,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className='bg-black h-screen overflow-y-scroll bg_grid pb-36'>
           <Navbar />
-          <div className='p-2 lg:pl-52 '>
-            <div className='mx-auto max-w-8xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8'>{children}</div>
+          <div className='ml-16 overflow-hidden w-[calc(100vw-4rem)] text-white p-6'>
+            {children}
           </div>
         </div>
       </body>
