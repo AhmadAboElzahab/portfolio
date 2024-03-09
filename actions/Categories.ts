@@ -7,7 +7,6 @@ export const addCategory = async (formData: FormData) => {
     await prisma.category.create({
       data: {
         title: title as string,
-        description: 'Posts related to technology',
       },
     });
     revalidatePath('/dashboard/blog');
