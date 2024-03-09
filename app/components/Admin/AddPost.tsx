@@ -1,10 +1,9 @@
 'use client';
 import React from 'react';
-import { addCategory } from '@/actions/Categories';
-export default function AddPost() {
+export default function AddPost({ addCategory }: any) {
   return (
     <form
-      action={async formData => {
+      action={async (formData) => {
         await addCategory(formData);
       }}
       className='text-red-500'
@@ -14,4 +13,3 @@ export default function AddPost() {
     </form>
   );
 }
- 
