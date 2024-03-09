@@ -4,7 +4,7 @@ import { addCategory } from '@/actions/Categories';
 export default function AddPost() {
   return (
     <form
-      action={async (formData) => {
+      action={async formData => {
         await addCategory(formData);
       }}
       className='text-red-500'
@@ -14,3 +14,4 @@ export default function AddPost() {
     </form>
   );
 }
+ 

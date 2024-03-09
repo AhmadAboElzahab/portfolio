@@ -10,7 +10,6 @@ export const addCategory = async (formData: FormData) => {
         description: 'Posts related to technology',
       },
     });
-    revalidatePath('/dashboard/blog');
   } catch (error) {
     return error;
   }
