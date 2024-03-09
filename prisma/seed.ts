@@ -1,23 +1,63 @@
-import { PrismaClient } from '@prisma/client';
+// seed.js
+
+const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
 async function main() {
-  const user = await prisma.user.upsert({
-    where: { email: 'test@test.com' },
-    update: {},
-    create: {
-      email: 'test@test.com',
-      name: 'Test User',
-      password: `$2y$12$GBfcgD6XwaMferSOdYGiduw3Awuo95QAPhxFE0oNJ.Ds8qj3pzEZy`,
+  // Seed categories
+  const technologyCategory = await prisma.category.create({
+    data: {
+      title: 'Technology',
+      description: 'Posts related to technology',
     },
   });
-  console.log({ user });
+
+  const scienceCategory = await prisma.category.create({
+    data: {
+      title: 'Science',
+      description: 'Posts related to science',
+    },
+  });
+
+  const travelCategory = await prisma.category.create({
+    data: {
+      title: 'Travel',
+      description: 'Posts related to travel',
+    },
+  });
+
+  // Seed posts
+  await prisma.post.createMany({
+    data: [
+      {
+        title: 'Introduction to Artificial Intelligence',
+        date: new Date(),
+        content: 'Content of the post goes here...',
+        categoryId: technologyCategory.id,
+      },
+      {
+        title: 'The Future of Space Exploration',
+        date: new Date(),
+        content: 'Content of the post goes here...',
+        categoryId: scienceCategory.id,
+      },
+      {
+        title: 'Top 10 Travel Destinations in 2024',
+        date: new Date(),
+        content: 'Content of the post goes here...',
+        categoryId: travelCategory.id,
+      },
+    ],
+  });
+
+  console.log('Data seeded successfully!');
 }
+
 main()
-  .then(() => prisma.$disconnect())
-  .catch(async (e) => {
+  .catch((e) => {
     console.error(e);
+  })
+  .finally(async () => {
     await prisma.$disconnect();
-    process.exit(1);
   });
