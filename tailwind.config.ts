@@ -40,6 +40,8 @@ const config = {
         },
       },
       colors: {
+        darkGray: '#0A0A0A',
+        grayBorder: '#252525',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
