@@ -8,8 +8,9 @@ export default async function Blog() {
   const categories = await prisma.category.findMany();
 
   return (
-    <div>
+    <>
+      <h1 className='text-5xl font-extrabold mb-2 border-[#242426]  pb-4 border-b-[1px] '>Blog</h1>
       <AddPost addCategory={addCategory} categories={categories} />
-    </div>
+    </>
   );
 }

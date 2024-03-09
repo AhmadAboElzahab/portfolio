@@ -1,4 +1,5 @@
 'use client';
+
 import { useOptimistic, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 export default function Categories({ addCategory, categories }: any) {
@@ -20,6 +21,7 @@ export default function Categories({ addCategory, categories }: any) {
           addOptimisticCategory({
             id: Math.random(),
             title: formData.get('title') as string,
+            type: formData.get('type') as string,
           });
 
           await addCategory(formData);
@@ -27,6 +29,7 @@ export default function Categories({ addCategory, categories }: any) {
         className='text-red-500'
       >
         <input type='text' name='title' />
+
         <input disabled={pending} type='submit' value='add' />
       </form>
       {optimisticCategories.map((category: any) => (
