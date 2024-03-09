@@ -3,8 +3,8 @@ import React from 'react';
 export default function AddPost({ addCategory }: any) {
   return (
     <form
-      action={(formData) => {
-        addCategory(formData);
+      action={async (formData) => {
+       await addCategory(formData);
       }}
       className='text-red-500'
     >
