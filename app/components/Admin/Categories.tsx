@@ -1,5 +1,5 @@
 'use client';
-import { useOptimistic, useRef, useState } from 'react';
+import { useOptimistic, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 import { VscEdit } from 'react-icons/vsc';
 import { RxCross2 } from 'react-icons/rx';
@@ -13,7 +13,6 @@ type categories = {
   categories: category[];
 };
 export default function Categories({ addCategory, categories }: any) {
-  const [category, setCategoryValue] = useState('');
   const { pending } = useFormStatus();
   const ref = useRef<HTMLFormElement>(null);
   const [optimisticCategories, addOptimisticCategory] = useOptimistic(
@@ -52,9 +51,7 @@ export default function Categories({ addCategory, categories }: any) {
             className='bg-black mb-2 text-sm invalid:text-gray-400 appearance-none border-[1px] border-grayBorder rounded w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder-text-grayBorder'
             name='type'
             defaultValue={''}
-            onChange={(e) => {
-              setCategoryValue(e.target.value);
-            }}
+            
           >
             <option value='' disabled selected>
               Select your option
