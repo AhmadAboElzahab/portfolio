@@ -1,5 +1,5 @@
 'use client';
-import { useOptimistic, useRef } from 'react';
+import { useOptimistic, useRef, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { VscEdit } from 'react-icons/vsc';
 import { RxCross2 } from 'react-icons/rx';
@@ -13,6 +13,7 @@ type categories = {
   categories: category[];
 };
 export default function Categories({ addCategory, categories }: any) {
+  const [category, setCategoryValue] = useState('');
   const { pending } = useFormStatus();
   const ref = useRef<HTMLFormElement>(null);
   const [optimisticCategories, addOptimisticCategory] = useOptimistic(
@@ -37,13 +38,38 @@ export default function Categories({ addCategory, categories }: any) {
   return (
     <div className='w-[25%]'>
       <div className='border-grayBorder border-[1px] bg-darkGray mb-[0.75rem] rounded-lg p-5'>
-        <h1 className='text-2xl font-bold'>Add Category</h1>
+        <h1 className='text-2xl mb-4 font-bold'>Add Category</h1>
 
-        <form onSubmit={handleSubmit}>
-          <input type='text' name='title' className='' />
-          <input type='text' name='type' />
+        <form onSubmit={handleSubmit} className='flex flex-col'>
+          <input
+            className='bg-black mb-2 text-sm appearance-none border-[1px] border-grayBorder rounded  w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder:text-grayBorder '
+            type='txt'
+            name='title'
+            placeholder='Title'
+          />
 
-          <input disabled={pending} type='submit' value='add' />
+          <select
+            className='bg-black mb-2 text-sm invalid:text-gray-400 appearance-none border-[1px] border-grayBorder rounded w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder-text-grayBorder'
+            name='type'
+            defaultValue={''}
+            onChange={(e) => {
+              setCategoryValue(e.target.value);
+            }}
+          >
+            <option value='' disabled selected>
+              Select your option
+            </option>
+            <option value='Backend'>Backend</option>
+            <option value='Frontend'>Frontend</option>
+            <option value='General'>General</option>
+          </select>
+
+          <input
+            disabled={pending}
+            type='submit'
+            className='bg-white self-end mr-4 text-black rounded py-1 px-2 hover:bg-gray-300 hover:cursor-pointer'
+            value='Save'
+          />
         </form>
       </div>
       <div className='border-grayBorder border-[1px] bg-darkGray rounded-lg p-3'>

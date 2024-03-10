@@ -52,4 +52,6 @@ body {
 .vertical-svg {
   transform: rotate(90deg);
 }
-
+:invalid {
+  color: rgba(156, 163, 175, 1);
+}
