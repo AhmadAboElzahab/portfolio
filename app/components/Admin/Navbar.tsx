@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <section className='flex z-50  gap-6 dashboard-navbar'>
-      <div className='fixed top-0 left-0 h-screen bg-black border-r-[1px] border-[#242426] w-16 text-gray-100'>
+      <div className='fixed top-0 left-0 h-screen bg-darkGray border-r-[1px] border-[#242426] w-16 text-gray-100'>
         <div className='mt-4 flex flex-col gap-4 relative' id='main-nav'>
           <VerticalLogo />
           {menus?.map((menu, i) => (
