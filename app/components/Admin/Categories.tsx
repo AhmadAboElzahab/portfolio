@@ -3,6 +3,7 @@ import { useOptimistic, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 import { VscEdit } from 'react-icons/vsc';
 import { RxCross2 } from 'react-icons/rx';
+import { deleteCategory } from '@/actions/actions';
 
 type category = {
   id: number;
@@ -22,9 +23,7 @@ export default function Categories({ addCategory, categories }: any) {
     },
   );
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+  const addNewCategory = async (formData: FormData) => {
     ref.current?.reset();
     addOptimisticCategory({
       id: Math.random(),
@@ -35,11 +34,11 @@ export default function Categories({ addCategory, categories }: any) {
   };
 
   return (
-    <div className='w-[25%]'>
+    <div className=' w-full lg:w-[25%]'>
       <div className='border-grayBorder border-[1px] bg-darkGray mb-[0.75rem] rounded-lg p-5'>
         <h1 className='text-2xl mb-4 font-bold'>Add Category</h1>
 
-        <form onSubmit={handleSubmit} className='flex flex-col'>
+        <form action={addNewCategory} className='flex flex-col'>
           <input
             className='bg-black mb-2 text-sm appearance-none border-[1px] border-grayBorder rounded  w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder:text-grayBorder '
             type='txt'
@@ -51,7 +50,6 @@ export default function Categories({ addCategory, categories }: any) {
             className='bg-black mb-2 text-sm invalid:text-gray-400 appearance-none border-[1px] border-grayBorder rounded w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder-text-grayBorder'
             name='type'
             defaultValue={''}
-            
           >
             <option value='' disabled selected>
               Select your option
@@ -95,10 +93,15 @@ export default function Categories({ addCategory, categories }: any) {
                   </p>
                 </td>
                 <td className='text-center'>
-                  <RxCross2 className='mx-auto text-lg' />
+                  <RxCross2
+                    className='mx-auto text-lg hover:text-red-500 hover:cursor-pointer '
+                    onClick={() => {
+                      deleteCategory(category.id);
+                    }}
+                  />
                 </td>
                 <td className='text-center'>
-                  <VscEdit className='mx-auto text-center text-lg' />
+                  <VscEdit className='mx-auto text-center hover:text-blue-500 hover:cursor-pointer text-lg' />
                 </td>
               </tr>
             ))}

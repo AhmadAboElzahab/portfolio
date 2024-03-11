@@ -19,3 +19,18 @@ export async function addCategory(formData: FormData) {
     revalidatePath('/dashboard/blog');
   }
 }
+
+export async function deleteCategory(id: number) {
+  try {
+    await prisma.category.delete({
+      where: {
+        id: id as number,
+      },
+    });
+    return 'Category Deleted successfully!';
+  } catch (error) {
+    return error;
+  } finally {
+    revalidatePath('/dashboard/blog');
+  }
+}

@@ -13,9 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en' className={inter.className}>
       <body className='dark'>
-        <div className='bg-black h-screen overflow-y-scroll bg_grid pb-36'>
+        <div className='bg-black h-screen overflow-y-scroll  pb-36'>
           <Navbar />
-          <div className='ml-16 overflow-hidden w-[calc(100vw-4rem)] text-white p-6'>
+          <div className='ml-16 overflow-hidden w-[calc(100vw-5rem)] pl-4 text-white '>
             {children}
           </div>
         </div>
