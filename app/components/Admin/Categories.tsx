@@ -45,20 +45,20 @@ export default function Categories({ addCategory, categories }: any) {
             name='title'
             placeholder='Title'
           />
-
-          <select
-            className='bg-black mb-2 text-sm invalid:text-gray-400 appearance-none border-[1px] border-grayBorder rounded w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder-text-grayBorder'
-            name='type'
-            defaultValue={''}
-          >
-            <option value='' disabled selected>
-              Select your option
-            </option>
-            <option value='Backend'>Backend</option>
-            <option value='Frontend'>Frontend</option>
-            <option value='General'>General</option>
-          </select>
-
+          <>
+            <select
+              className='bg-black mb-2 text-sm invalid:text-gray-400 appearance-none border-[1px] border-grayBorder rounded w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder-text-grayBorder'
+              name='type'
+              defaultValue=''
+            >
+              <option defaultValue='' disabled selected>
+                Select your option
+              </option>
+              <option defaultValue='Backend'>Backend</option>
+              <option defaultValue='Frontend'>Frontend</option>
+              <option defaultValue='General'>General</option>
+            </select>
+          </>
           <input
             disabled={pending}
             type='submit'
