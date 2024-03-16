@@ -1,12 +1,23 @@
 'use client';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import MDEditor from '@uiw/react-md-editor';
+import { addPost, allCategories } from '@/actions/actions';
 
 export default function AddPost() {
   let [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState<any>('');
+  const [categories, setCategories] = useState<any>([]);
+  const [title, setTitle] = useState('');
+  const [categoryID, setCategoryID] = useState<any>(null);
 
+  useEffect(() => {
+    async function fetchCategories() {
+      const categoriesData = await allCategories();
+      setCategories(categoriesData);
+    }
+    fetchCategories();
+  }, []);
   function closeModal() {
     setIsOpen(false);
   }
@@ -52,17 +63,55 @@ export default function AddPost() {
                 leaveTo='opacity-0 scale-95'
               >
                 <Dialog.Panel className='w-[85vw] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
-                  <Dialog.Title as='h3' className='text-xlg font-medium leading-6 text-gray-900'>
-                    Delete
+                  <Dialog.Title
+                    as='h3'
+                    className='text-xl border-b-[1px] border-[#CFD7DE] mb-4 pb-2 font-medium leading-6 text-gray-900'
+                  >
+                    Add New Post
                   </Dialog.Title>
-                  <div data-color-mode='light'>
-                    <MDEditor value={value} visibleDragbar={false} onChange={setValue} />
+                  <div className='flex flex-col'>
+                    <input
+                      className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                      type='txt'
+                      name='title'
+                      value={title}
+                      onChange={(e) => {
+                        setTitle(e.target.value);
+                      }}
+                      placeholder='Add Title'
+                    />
+                    <select
+                      onChange={(e) => {
+                        setCategoryID(Number(e.target.value));
+                      }}
+                      value={categoryID}
+                      className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                    >
+                      <option value=''>Please choose</option>
+                      {categories.map((cat: any, index: number) => (
+                        <option key={index} value={cat.id}>
+                          {cat.title}
+                        </option>
+                      ))}
+                    </select>
+                    <div data-color-mode='light'>
+                      <MDEditor
+                        value={value}
+                        height={500}
+                        minHeight={500}
+                        visibleDragbar={false}
+                        onChange={setValue}
+                      />
+                    </div>
                   </div>
-
                   <div className='flex flex-row-reverse mt-8 gap-5'>
                     <button
+                      onClick={() => {
+                        console.log(categoryID);
+                        addPost(title, categoryID, value);
+                      }}
                       type='button'
-                      className='inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium bg-black text-white cursor-wait'
+                      className='inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium bg-black text-white '
                     >
                       Add
                     </button>
