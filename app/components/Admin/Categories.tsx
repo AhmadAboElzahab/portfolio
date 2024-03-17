@@ -4,6 +4,7 @@ import { useFormStatus } from 'react-dom';
 import { VscEdit } from 'react-icons/vsc';
 import { RxCross2 } from 'react-icons/rx';
 import { deleteCategory } from '@/actions/actions';
+import { toast } from 'react-toastify';
 
 type category = {
   id: number;
@@ -30,7 +31,13 @@ export default function Categories({ addCategory, categories }: any) {
       title: formData.get('title') as string,
       type: formData.get('type') as string,
     });
-    await addCategory(formData);
+    const result = await addCategory(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    }
+    if (result?.message) {
+      toast.success(result.message);
+    }
   };
 
   return (
@@ -38,7 +45,7 @@ export default function Categories({ addCategory, categories }: any) {
       <div className='border-grayBorder border-[1px] bg-darkGray mb-[0.75rem] rounded-lg p-5'>
         <h1 className='text-2xl mb-4 font-bold'>Add Category</h1>
 
-        <form action={addNewCategory} className='flex flex-col'>
+        <form ref={ref} action={addNewCategory} className='flex flex-col'>
           <input
             className='bg-black mb-2 text-sm appearance-none border-[1px] border-grayBorder rounded  w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder:text-grayBorder '
             type='txt'
@@ -84,9 +91,9 @@ export default function Categories({ addCategory, categories }: any) {
                 <td>
                   <p
                     className={` w-fit mx-auto text-center  rounded-xl px-2 py-1 ${
-                      category.type === 'Frontend' ? 'text-[#BF7AF0] bg-[#2F1939]' : ''
-                    } ${category.type === 'Backend' ? 'text-[#FF5733] bg-[#33130A]' : ''} ${
-                      category.type === 'General' ? 'text-[#3498DB] bg-[#154360]' : ''
+                      category.type === 'Frontend' ? 'text-[#B574E4] bg-[#2F1939]' : ''
+                    } ${category.type === 'Backend' ? 'text-[#FF6166] bg-[#3B1618]' : ''} ${
+                      category.type === 'General' ? 'text-[#0CC7B4] bg-[#093A33]' : ''
                     }`}
                   >
                     {category.type}
@@ -95,8 +102,14 @@ export default function Categories({ addCategory, categories }: any) {
                 <td className='text-center'>
                   <RxCross2
                     className='mx-auto text-lg hover:text-red-500 hover:cursor-pointer '
-                    onClick={() => {
-                      deleteCategory(category.id);
+                    onClick={async () => {
+                      const result = await deleteCategory(category.id);
+                      if (result?.error) {
+                        toast.error(result.error);
+                      }
+                      if (result?.message) {
+                        toast.success(result.message);
+                      }
                     }}
                   />
                 </td>

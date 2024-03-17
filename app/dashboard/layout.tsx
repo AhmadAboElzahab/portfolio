@@ -1,5 +1,8 @@
 import Navbar from '../components/Admin/Navbar';
 import { Inter } from 'next/font/google';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -16,6 +19,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <div className='ml-16 overflow-hidden w-[calc(100vw-5rem)] pl-4 text-white '>
             {children}
+            <ToastContainer
+              position='bottom-right'
+              autoClose={1000}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              theme='colored'
+            />
           </div>
         </div>
       </body>

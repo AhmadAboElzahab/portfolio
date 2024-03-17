@@ -1,7 +1,7 @@
 'use server';
 import { prisma } from '@/lib/prisma';
+import { error } from 'console';
 import { revalidatePath } from 'next/cache';
-import { marked } from 'marked';
 
 export async function addCategory(formData: FormData) {
   const title = formData.get('title');
@@ -13,9 +13,9 @@ export async function addCategory(formData: FormData) {
         type: type as string,
       },
     });
-    return 'Category added successfully!';
+    return { message: 'Category added successfully!' };
   } catch (error) {
-    return error;
+    return { error: 'something went wrong' };
   } finally {
     revalidatePath('/dashboard/blog');
   }
@@ -38,9 +38,9 @@ export async function deleteCategory(id: number) {
         id: id as number,
       },
     });
-    return 'Category Deleted successfully!';
+    return { message: 'Category Deleted successfully!' };
   } catch (error) {
-    return error;
+    return { error: 'something went wrong' };
   } finally {
     revalidatePath('/dashboard/blog');
   }
