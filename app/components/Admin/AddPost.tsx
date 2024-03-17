@@ -1,15 +1,16 @@
 'use client';
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useState, useEffect, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import MDEditor from '@uiw/react-md-editor';
 import { addPost, allCategories } from '@/actions/actions';
+import { toast } from 'react-toastify';
+import { useFormStatus } from 'react-dom';
 
 export default function AddPost() {
+  const { pending } = useFormStatus();
+
   let [isOpen, setIsOpen] = useState(false);
-  const [value, setValue] = useState<any>('');
   const [categories, setCategories] = useState<any>([]);
-  const [title, setTitle] = useState('');
-  const [categoryID, setCategoryID] = useState<any>(null);
+  const ref = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     async function fetchCategories() {
@@ -25,6 +26,18 @@ export default function AddPost() {
   function openModal() {
     setIsOpen(true);
   }
+  const addNewPost = async (formData: FormData) => {
+    ref.current?.reset();
+
+    const result = await addPost(formData);
+    if (result?.error) {
+      toast.error(result.error);
+    }
+    if (result?.message) {
+      closeModal;
+      toast.success(result.message);
+    }
+  };
   return (
     <>
       <div>
@@ -69,60 +82,47 @@ export default function AddPost() {
                   >
                     Add New Post
                   </Dialog.Title>
-                  <div className='flex flex-col'>
+                  <form ref={ref} action={addNewPost} className='flex flex-col'>
                     <input
                       className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
                       type='txt'
                       name='title'
-                      value={title}
-                      onChange={(e) => {
-                        setTitle(e.target.value);
-                      }}
                       placeholder='Add Title'
                     />
                     <select
-                      onChange={(e) => {
-                        setCategoryID(Number(e.target.value));
-                      }}
-                      value={categoryID}
+                      name='categoryID'
+                      defaultValue={''}
                       className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
                     >
-                      <option value=''>Please choose</option>
+                      <option defaultValue=''>Please choose</option>
                       {categories.map((cat: any, index: number) => (
                         <option key={index} value={cat.id}>
                           {cat.title}
                         </option>
                       ))}
                     </select>
-                    <div data-color-mode='light'>
-                      <MDEditor
-                        value={value}
-                        height={500}
-                        minHeight={500}
-                        visibleDragbar={false}
-                        onChange={setValue}
-                      />
+                    <textarea
+                      name='body'
+                      id=''
+                      className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                    ></textarea>
+                    <div className='flex flex-row-reverse mt-8 gap-5'>
+                      <button
+                        disabled={pending}
+                        type='submit'
+                        className='inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium bg-black text-white '
+                      >
+                        {pending ? 'Loading' : 'Add'}
+                      </button>
+                      <button
+                        type='button'
+                        className='inline-flex justify-center rounded-md border border-transparent bg-gray-200 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2'
+                        onClick={closeModal}
+                      >
+                        Cancel
+                      </button>
                     </div>
-                  </div>
-                  <div className='flex flex-row-reverse mt-8 gap-5'>
-                    <button
-                      onClick={() => {
-                        console.log(categoryID);
-                        addPost(title, categoryID, value);
-                      }}
-                      type='button'
-                      className='inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium bg-black text-white '
-                    >
-                      Add
-                    </button>
-                    <button
-                      type='button'
-                      className='inline-flex justify-center rounded-md border border-transparent bg-gray-200 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2'
-                      onClick={closeModal}
-                    >
-                      Cancel
-                    </button>
-                  </div>
+                  </form>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

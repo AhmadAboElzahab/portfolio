@@ -4,6 +4,10 @@ import { prisma } from '@/lib/prisma';
 import Categories from '@/app/components/Admin/Categories';
 import { addCategory } from '@/actions/actions';
 import AddPost from '@/app/components/Admin/AddPost';
+export const metadata = {
+  title: 'Dashboard | Blog',
+  description: 'Blog Page Ahmad Abo Elzahab Dashboard ',
+};
 export default async function Blog() {
   const categories = await prisma.category.findMany();
 

@@ -58,12 +58,10 @@ export default function Categories({ addCategory, categories }: any) {
               name='type'
               defaultValue=''
             >
-              <option defaultValue='' disabled selected>
-                Select your option
-              </option>
-              <option defaultValue='Backend'>Backend</option>
-              <option defaultValue='Frontend'>Frontend</option>
-              <option defaultValue='General'>General</option>
+              <option value=''>Select your option</option>
+              <option value='Backend'>Backend</option>
+              <option value='Frontend'>Frontend</option>
+              <option value='General'>General</option>
             </select>
           </>
           <input

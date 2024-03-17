@@ -6,6 +6,9 @@ import { revalidatePath } from 'next/cache';
 export async function addCategory(formData: FormData) {
   const title = formData.get('title');
   const type = formData.get('type');
+  if (!title || !type) {
+    return { error: 'all field requierd' };
+  }
   try {
     await prisma.category.create({
       data: {
@@ -46,22 +49,28 @@ export async function deleteCategory(id: number) {
   }
 }
 
-export async function addPost(title: string, categoryId: number, body: string) {
+export async function addPost(formData: FormData) {
+  const title = formData.get('title');
+  const categoryID = Number(formData.get('categoryID'));
+  const body = formData.get('body');
+  if (!title || !categoryID || !body) {
+    return { error: 'all field requierd' };
+  }
   try {
     await prisma.post.create({
       data: {
-        title: title,
+        title: title as string,
         content: body as string,
         date: new Date(),
         category: {
-          connect: { id: categoryId },
+          connect: { id: categoryID },
         },
       },
     });
 
-    return 'Post added successfully!';
+    return { message: 'Post Added successfully!' };
   } catch (error) {
-    return error;
+    return { error: JSON.stringify(error) };
   } finally {
     revalidatePath('/dashboard/blog');
   }
