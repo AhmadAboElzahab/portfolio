@@ -88,18 +88,25 @@ export default function AddPost() {
                       name='title'
                       placeholder='Add Title'
                     />
+                    <input
+                      className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                      type='txt'
+                      name='image'
+                      placeholder='Add Image Url'
+                    />
                     <select
                       name='categoryID'
                       defaultValue={''}
-                      className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                      className='bg-white appearance-none text-black mb-2 text-sm border-[1px] border-[#CFD7DE] rounded w-full py-2 px-4 leading-tight focus:outline-none'
                     >
-                      <option defaultValue=''>Please choose</option>
+                      <option value=''>Please choose</option>
                       {categories.map((cat: any, index: number) => (
                         <option key={index} value={cat.id}>
                           {cat.title}
                         </option>
                       ))}
                     </select>
+
                     <textarea
                       name='body'
                       placeholder='Add Post Body'

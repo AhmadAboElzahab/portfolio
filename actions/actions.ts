@@ -50,15 +50,17 @@ export async function deleteCategory(id: number) {
 
 export async function addPost(formData: FormData) {
   const title = formData.get('title');
+  const image = formData.get('image');
   const categoryID = Number(formData.get('categoryID'));
   const body = formData.get('body');
-  if (!title || !categoryID || !body) {
+  if (!title || !categoryID || !body || !image) {
     return { error: 'all field requierd' };
   }
   try {
     await prisma.post.create({
       data: {
         title: title as string,
+        image: image as string,
         content: body as string,
         date: new Date(),
         category: {
@@ -72,5 +74,13 @@ export async function addPost(formData: FormData) {
     return { error: JSON.stringify(error) };
   } finally {
     revalidatePath('/dashboard/blog');
+  }
+}
+export async function allPosts() {
+  try {
+    const posts = await prisma.post.findMany({});
+    return posts;
+  } catch (error) {
+    return error;
   }
 }
