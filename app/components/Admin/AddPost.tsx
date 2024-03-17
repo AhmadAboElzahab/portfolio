@@ -3,11 +3,9 @@ import { Fragment, useState, useEffect, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { addPost, allCategories } from '@/actions/actions';
 import { toast } from 'react-toastify';
-import { useFormStatus } from 'react-dom';
+import { IoMdAdd } from 'react-icons/io';
 
 export default function AddPost() {
-  const { pending } = useFormStatus();
-
   let [isOpen, setIsOpen] = useState(false);
   const [categories, setCategories] = useState<any>([]);
   const ref = useRef<HTMLFormElement>(null);
@@ -28,14 +26,14 @@ export default function AddPost() {
   }
   const addNewPost = async (formData: FormData) => {
     ref.current?.reset();
-
     const result = await addPost(formData);
+
     if (result?.error) {
       toast.error(result.error);
     }
     if (result?.message) {
-      closeModal;
       toast.success(result.message);
+      closeModal();
     }
   };
   return (
@@ -61,7 +59,7 @@ export default function AddPost() {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-black bg-opacity-60' />
+            <div className='fixed inset-0 bg-black backdrop-blur-md bg-opacity-60' />
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-y-auto'>
@@ -78,8 +76,9 @@ export default function AddPost() {
                 <Dialog.Panel className='w-[85vw] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
                   <Dialog.Title
                     as='h3'
-                    className='text-xl border-b-[1px] border-[#CFD7DE] mb-4 pb-2 font-medium leading-6 text-gray-900'
+                    className='text-xl flex border-b-[1px] border-[#CFD7DE] mb-4  font-medium leading-6 text-gray-900'
                   >
+                    <IoMdAdd size={40} className='pb-4' />
                     Add New Post
                   </Dialog.Title>
                   <form ref={ref} action={addNewPost} className='flex flex-col'>
@@ -103,16 +102,17 @@ export default function AddPost() {
                     </select>
                     <textarea
                       name='body'
+                      placeholder='Add Post Body'
                       id=''
-                      className='bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                      rows={20}
+                      className='resize-none  bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
                     ></textarea>
-                    <div className='flex flex-row-reverse mt-8 gap-5'>
+                    <div className='flex flex-row-reverse mt-3 gap-5'>
                       <button
-                        disabled={pending}
                         type='submit'
                         className='inline-flex justify-center rounded-md px-4 py-2 text-sm font-medium bg-black text-white '
                       >
-                        {pending ? 'Loading' : 'Add'}
+                        Submit
                       </button>
                       <button
                         type='button'

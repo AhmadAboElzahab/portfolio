@@ -1,6 +1,5 @@
 'use server';
 import { prisma } from '@/lib/prisma';
-import { error } from 'console';
 import { revalidatePath } from 'next/cache';
 
 export async function addCategory(formData: FormData) {
