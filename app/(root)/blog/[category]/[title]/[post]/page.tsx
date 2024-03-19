@@ -36,17 +36,6 @@ export default async function Page({
 
     return (
       <div className='pt-24  '>
-        <h1 className='text-3xl'>{postContent.title}</h1>
-        <Image
-          src={postContent.image}
-          placeholder='blur'
-          blurDataURL={`/_next/image?url=${postContent.image}&w=16&q=1`}
-          width={500}
-          height={500}
-          alt='Picture of the author'
-        />
-
-        <hr />
         <article
           className=' 
         
