@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
-import { MarkdownRenderer } from '../../../../../../components/Markdown';
+import { MarkdownRenderer } from '@/components/Markdown';
 
 type Post = {
   id: number;
@@ -50,8 +50,8 @@ export default async function Page({
         <article
           className=' 
         
-        prose dark:prose-invert mx-auto prose-xl
-        prose-code:text-gray-500'
+        prose dark:prose-invert lg:prose-xl
+'
         >
           <MarkdownRenderer>{postContent.content}</MarkdownRenderer>
         </article>

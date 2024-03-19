@@ -23,6 +23,13 @@ const config = {
       },
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '90ch',
+          },
+        },
+      },
       animation: {
         spotlight: 'spotlight 2s ease .75s 1 forwards',
       },
