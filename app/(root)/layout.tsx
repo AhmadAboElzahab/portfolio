@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import Navbar from '../components/Navbar';
 import { TracingBeam } from '../components/ui/tracing-beam';
+import Template from '../components/FramerMotionWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body className=' bg-black'>
         <Navbar />
         <div className='pt-20'>
-          <TracingBeam className='px-10 lg:px-6 '>{children}</TracingBeam>
+          <Template>
+            <TracingBeam className='px-10 lg:px-6 '>{children}</TracingBeam>
+          </Template>
         </div>
       </body>
     </html>

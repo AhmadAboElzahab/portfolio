@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import Logo from './Home/Logo';
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
-
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 interface link {
