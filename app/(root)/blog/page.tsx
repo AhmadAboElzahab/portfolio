@@ -30,12 +30,12 @@ export default async function Page() {
               />
             </div>
           </Link>
-          <div className='pt-2 text-white/35 px-2 py-1 backdrop-blur-sm w-full rounded-b-md'>
+          <div className='pt-2 text-white/35 px-2  rounded-b-md'>
             <Link href={`/blog/${p.category.type}/${p.category.title}/${p.id}`}>
-              <h1 className='text-white h-11 font-bold pb-3'>{p.title}</h1>
+              <h1 className='text-white font-bold '>{p.title}</h1>
             </Link>
-            <p>{p.content.substring(1, 100)}</p>
-            <div className='flex  justify-between pt-3 pb-1'>
+            <p>{p.descreption.substring(0, 100)}</p>
+            <div className='flex  justify-between pt-2 pb-1'>
               <div className='flex flex-row'>
                 <Link className=' mr-1' href={`/blog/${p.category.type}/`}>
                   <p className='bg-[#19191C] text-white px-2 py-1 rounded-3xl text-xs hover:bg-[#2C2C31]'>
