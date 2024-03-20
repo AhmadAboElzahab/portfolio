@@ -19,6 +19,7 @@ model Post {
   date      DateTime
   content   String   
   image   String   
+  descreption   String   
   category  Category @relation(fields: [categoryId], references: [id])
   categoryId Int
 }

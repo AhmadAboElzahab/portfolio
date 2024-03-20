@@ -106,7 +106,13 @@ export default function AddPost() {
                         </option>
                       ))}
                     </select>
-
+                    <textarea
+                      name='descreption'
+                      placeholder='Add Short Descreption'
+                      id=''
+                      rows={3}
+                      className='resize-none  bg-white mb-2 text-sm appearance-none border-[1px] border-[#CFD7DE] rounded  w-full py-2 px-4 text-black leading-tight focus:outline-none '
+                    ></textarea>
                     <textarea
                       name='body'
                       placeholder='Add Post Body'

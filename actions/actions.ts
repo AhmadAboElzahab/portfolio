@@ -51,9 +51,10 @@ export async function deleteCategory(id: number) {
 export async function addPost(formData: FormData) {
   const title = formData.get('title');
   const image = formData.get('image');
+  const descreption = formData.get('descreption');
   const categoryID = Number(formData.get('categoryID'));
   const body = formData.get('body');
-  if (!title || !categoryID || !body || !image) {
+  if (!title || !categoryID || !body || !image || !descreption) {
     return { error: 'all field requierd' };
   }
   try {
@@ -62,6 +63,7 @@ export async function addPost(formData: FormData) {
         title: title as string,
         image: image as string,
         content: body as string,
+        descreption: descreption as string,
         date: new Date(),
         category: {
           connect: { id: categoryID },
