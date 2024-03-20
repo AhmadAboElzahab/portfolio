@@ -22,9 +22,7 @@ export default function RootLayout({
       <body className=' bg-black'>
         <Navbar />
         <div className='pt-20'>
-          <Template>
-            <TracingBeam className='px-10 lg:px-6 '>{children}</TracingBeam>
-          </Template>
+          <Template>{children}</Template>
         </div>
       </body>
     </html>

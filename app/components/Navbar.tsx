@@ -38,7 +38,7 @@ export default function Navbar() {
     <nav
       className={`${
         header
-          ? 'w-full z-20 pt-2 pb-3  fixed bg-black/50 backdrop-blur-lg border-b-[1px] border-grayBorder '
+          ? 'w-full z-20  pb-3  fixed bg-black/50 backdrop-blur-lg border-b-[1px] border-grayBorder '
           : 'bg-transparent w-full pt-2 z-20  fixed  pb-3'
       }`}
     >
@@ -63,9 +63,11 @@ export default function Navbar() {
                 );
               })}
             </div>
+
             <Link
+              target='_blank'
+              href='https://google.com'
               className='bg-[#8E8E98] hover:bg-[#aaaab1] py-1 px-2 hover:transition duration-300	text-black  rounded-lg'
-              href='/contact'
             >
               Resume
             </Link>

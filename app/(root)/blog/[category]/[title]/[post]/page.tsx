@@ -39,7 +39,7 @@ export default async function Page({
         <article
           className=' 
         
-        prose dark:prose-invert lg:prose-xl
+        prose dark:prose-invert prose-sm
 '
         >
           <MarkdownRenderer>{postContent.content}</MarkdownRenderer>
