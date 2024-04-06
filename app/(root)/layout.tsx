@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className=' bg-black'>
         <Navbar />
-        <div className='pt-20 '>
+        <div className='pt-20 w-[90%] md:w-[80%]	lg:w-[58%] mx-auto '>
           <Template>{children}</Template>
         </div>
       </body>

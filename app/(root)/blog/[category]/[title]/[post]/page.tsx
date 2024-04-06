@@ -35,16 +35,14 @@ export default async function Page({
     }
 
     return (
-      <div className='pt-24  '>
-        <article
-          className=' 
+      <article
+        className=' 
         
-        prose dark:prose-invert prose-lg mx-auto pb-20
+        prose dark:prose-invert prose-lg mx-auto pb-20 text-wrap 
 '
-        >
-          <MarkdownRenderer>{postContent.content}</MarkdownRenderer>
-        </article>
-      </div>
+      >
+        <MarkdownRenderer>{postContent.content}</MarkdownRenderer>
+      </article>
     );
   } catch (error) {}
 }

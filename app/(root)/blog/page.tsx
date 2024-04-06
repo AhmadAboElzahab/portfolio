@@ -12,7 +12,7 @@ export default async function Page() {
   });
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[90%] md:w-[75%] lg:w-[65%] mx-auto gap-10 pt-20 pb-40'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-10 pt-20 pb-40'>
       {posts.map((p: any, i: number) => (
         <div className='rounded-md hover:scale-105 transition-all duration-300 border-[1px] border-grayBorder'>
           <Link href={`/blog/${p.category.type}/${p.category.title}/${p.id}`} key={i}>
@@ -26,7 +26,7 @@ export default async function Page() {
                 fill
                 alt=''
                 className='rounded-md'
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'fill' }}
               />
             </div>
           </Link>

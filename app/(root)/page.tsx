@@ -8,7 +8,7 @@ import { TextGenerateEffect } from '../components/ui/text-generate-effect';
 
 export default function Home() {
   return (
-    <main className=' w-[90%] md:w-[80%]	lg:w-[90%]  mx-auto  '>
+    <main className='  '>
       <TracingBeam className='px-10 lg:px-6 '>
         <div className='sec'>
           <BigText />
