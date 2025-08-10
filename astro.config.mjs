@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
   adapter: cloudflare({
     platformProxy: {
@@ -11,4 +13,6 @@ export default defineConfig({
 
     imageService: "cloudflare",
   }),
+  site: "https://ahmad.studio",
+  integrations: [sitemap()],
 });
