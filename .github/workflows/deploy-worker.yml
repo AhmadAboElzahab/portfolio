@@ -3,28 +3,17 @@ name: Deploy Cloudflare Worker
 on:
   push:
     branches:
-      - main # Change if your deployment branch is different
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # Install Node.js (needed for Wrangler CLI)
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Install Wrangler
+        run: npm i -D wrangler@latest
 
-      # Install latest Wrangler globally
-      - name: Install Wrangler CLI
-        run: npm install -g wrangler
-
-      # Deploy to Cloudflare Workers
       - name: Deploy Worker
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
