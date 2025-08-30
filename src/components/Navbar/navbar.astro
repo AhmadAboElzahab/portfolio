@@ -1,20 +1,23 @@
----
-import Name from "../Name/Name.astro";
----
+<nav class="tui-nav no-padding">
+  <div class="tui-panel red-168 full-width tui-no-shadow top-header">
+    <p>Software Engineer</p>
+    <p>Location: Dubai, United Arab Emirates</p>
+    <p>Email: ahmad.abo.elzahab@icloud.com</p>
+    <p>Phone: +971 50 275 7434</p>
+    <p>LinkedIn ahmad-abo-elzahab</p>
+  </div>
 
-<div class="tui-panel red-168 full-width tui-no-shadow">
-  &nbsp;Software Engineer
-</div>
-<nav class="tui-nav">
-  <ul>
-    <li class="tui-dropdown">
-      <span class="red-168-text">F</span>ile
-      <div class="tui-dropdown-content">
-        <ul>
-          <li><a href="#!"><span class="red-168-text">N</span>ew</a></li>
-        </ul>
-      </div>
-    </li>
-  </ul>
+  <span class="red-168-text">AZ</span>
 </nav>
-<Name />
+<style>
+  .top-header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 16px;
+  }
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+</style>
