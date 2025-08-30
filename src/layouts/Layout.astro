@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar/navbar.astro";
+import Statusbar from "../components/Statusbar/Statusbar.astro";
 import "../styles/global.css";
 ---
 
@@ -12,6 +14,8 @@ import "../styles/global.css";
     <title>Ahmad</title>
   </head>
   <body class="tui-bg-blue-black">
+    <Navbar />
     <slot />
+    <Statusbar />
   </body>
 </html>
