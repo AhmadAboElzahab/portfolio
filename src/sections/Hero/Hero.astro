@@ -3,14 +3,31 @@ import Name from "../../components/Name/Name.astro";
 ---
 
 <section class="hero-section" id="hero-section" aria-label="hero-section">
-  <Name />
+  <h1>Ahmad Abo Elzahab</h1>
+  <img src="https://media.ahmad.studio/main.avif" />
 </section>
 <style>
   .hero-section {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-image: url("https://media.ahmad.studio/background.avif");
+    background-color: aqua;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    position: relative;
+  }
+  h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    color: white;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: black;
+  }
+  img {
+    max-width: 100vw;
+    position: absolute;
+    bottom: 0;
   }
 </style>
