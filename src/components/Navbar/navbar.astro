@@ -1,12 +1,11 @@
 <nav class="tui-nav no-padding">
-  <div class="tui-panel red-168 full-width tui-no-shadow top-header">
-    <p>Software Engineer</p>
-    <p>Location: Dubai, United Arab Emirates</p>
-    <p>Email: ahmad.abo.elzahab@icloud.com</p>
-    <p>Phone: +971 50 275 7434</p>
-    <p>LinkedIn ahmad-abo-elzahab</p>
+  <div class="tui-panel red-168 full-width tui-no-shadow">
+    <div class="top-header flashing-element">
+      <p>Software Engineer</p>
+    </div>
   </div>
 
+  <span class="red-168-text">AZ</span>
   <span class="red-168-text">AZ</span>
 </nav>
 <style>
@@ -19,5 +18,19 @@
   p {
     padding: 0px;
     margin: 0px;
+  }
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .flashing-element {
+    animation: blink 1s infinite;
   }
 </style>
