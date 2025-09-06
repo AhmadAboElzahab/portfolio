@@ -4,7 +4,6 @@ import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 
 import sitemap from "@astrojs/sitemap";
-import lenis from "astro-lenis";
 
 export default defineConfig({
   output: "server",
@@ -16,5 +15,5 @@ export default defineConfig({
     imageService: "cloudflare",
   }),
   site: "https://ahmad.studio",
-  integrations: [sitemap(), lenis()],
+  integrations: [sitemap()],
 });

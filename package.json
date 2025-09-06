@@ -14,7 +14,6 @@
 		"@astrojs/cloudflare": "^12.6.3",
 		"@astrojs/sitemap": "^3.4.2",
 		"astro": "^5.12.9",
-		"astro-lenis": "^1.0.0",
 		"tuicss": "^2.1.2"
 	},
 	"devDependencies": {
