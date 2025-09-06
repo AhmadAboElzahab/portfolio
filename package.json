@@ -13,7 +13,9 @@
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.6.3",
 		"@astrojs/sitemap": "^3.4.2",
+		"@tailwindcss/vite": "^4.1.13",
 		"astro": "^5.12.9",
+		"tailwindcss": "^4.1.13",
 		"tuicss": "^2.1.2"
 	},
 	"devDependencies": {
